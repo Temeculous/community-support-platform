@@ -1,0 +1,26 @@
+# Virtual environment
+venv/
+env/
+.venv/
+
+# Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# SQLite databases
+*.db
+
+# VSCode settings
+.vscode/
+
+# Environment files
+.env
+
+# Dependency directories
+*.egg-info/
+dist/
+build/
+
+# Logs and databases
+*.log
