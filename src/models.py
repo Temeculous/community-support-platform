@@ -3,7 +3,7 @@ from sqlalchemy.orm import relationship
 from sqlalchemy.sql import func
 from .database import Base
 
-#Database model representing platform users
+# Database model representing platform users
 class User(Base):
     __tablename__ = "users"
 
@@ -14,10 +14,10 @@ class User(Base):
     skills = Column(JSON, default=[])
     created_at = Column(DateTime(timezone=True), server_default=func.now())
 
-    #relationship to service requests
+    # Relationship to service requests
     service_requests = relationship("ServiceRequest", back_populates="requester")
 
-#Database model for service requests
+# Database model for service requests
 class ServiceRequest(Base):
     __tablename__ = "service_requests"
 
@@ -28,5 +28,5 @@ class ServiceRequest(Base):
     status = Column(String, default="OPEN")
     created_at = Column(DateTime(timezone=True), server_default=func.now())
 
-    #relationship to user who made the request
+    # Relationship to user who made the request
     requester = relationship("User", back_populates="service_requests")
